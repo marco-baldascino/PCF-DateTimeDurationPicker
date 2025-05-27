@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <control 
+    namespace="DEVDateTimeDurationPicker" 
+    constructor="DateTimeDurationPicker" 
+    version="1.0.0" 
+    display-name-key="DateTimeDurationPicker" 
+    description-key="DateTimeDurationPicker_Description" 
+    control-type="standard">
+
+    <!-- Bound dateTime field -->
+    <property 
+      name="eventdate" 
+      display-name-key="Event Date" 
+      description-key="Event Date" 
+      of-type="DateAndTime.DateAndTime" 
+      usage="bound" 
+      required="true" />
+
+    <!-- Bound duration field (Integer whole number) -->
+    <property 
+      name="duration" 
+      display-name-key="Duration" 
+      description-key="Duration" 
+      of-type="Whole.None" 
+      usage="bound" 
+      required="false" />
+
+    <!-- Comma-separated duration intervals (e.g., 15,30) -->
+    <property 
+      name="durationIntervals" 
+      display-name-key="Duration Intervals" 
+      description-key="Comma-separated list of durations (e.g., 15,30)" 
+      of-type="SingleLine.Text" 
+      usage="input" 
+      required="false" />
+
+    <!-- Time format -->
+    <property 
+      name="timeFormat" 
+      display-name-key="Time Format" 
+      description-key="Display time in 24-hour or 12-hour format" 
+      of-type="Enum" 
+      usage="input" 
+      required="false" 
+      default-value="0">
+      <value 
+        name="24-hour" 
+        display-name-key="24-hour">0</value>
+      <value 
+        name="12-hour" 
+        display-name-key="12-hour">1</value>
+    </property>
+
+    <!-- Default start time -->
+    <property 
+      name="defaultToCurrentTime" 
+      display-name-key="Default to Current Time" 
+      description-key="True to use system time, false to start from 08:00" 
+      of-type="TwoOptions" 
+      usage="input" 
+      required="false" 
+      default-value="true" />
+
+    <!-- Eventenddate output (Calculated date + selected end time) -->
+    <property 
+      name="eventenddate" 
+      display-name-key="Event End Date" 
+      description-key="Calculated Event End Date" 
+      of-type="DateAndTime.DateAndTime" 
+      usage="output" 
+      required="false" />
+
+    <resources>
+      <code path="index.ts" order="1" />
+    </resources>
+  </control>
+</manifest>
